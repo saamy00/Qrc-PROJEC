@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row " style="margin-top: 20px;">
+      {% for service in services %}
+        <div class="col-md-3 ">
+          <div class="card" style="width: 18rem; margin-left: 10px; margin-right: 10px; ">
+            <img src="{{ service.image.url }}" style="height: 150px; width: 150px;  margin-left: 25%;"  class="card-img-top" alt="">
+            <div class="card-body">
+              <h5 class="card-title">{{service.name }}</h5>
+              <p class="card-text">{{ service.description }}</p>
+              <p class="card-text">price: ${{ service.price }}</p>
+              <button class="btn " style="background-color: #956bc5; width: 100%; color: white;">Book Now</button>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

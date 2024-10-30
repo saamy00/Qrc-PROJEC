@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<style>
+  #services{
+  background-image: url('{% static 'images/GDGHargeisaApril2022_BAk2SOi.jpg' %}');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+ 
+  opacity: 100% ;
+  width: 100%;
+  height: 100vh;
+ 
+}
+
+
+
+
+</style>
+<div  id="services"></div>
+
+<br>
+
+  <div class="container">
+    <div class="row " style="margin-top: 20px;">
+      {% for service in services %}
+        <div class="col-md-3">
+          <div class="card" style="width: 18rem; ">
+            <img src="{{ service.image.url }}" style="height: 150px; width: 150px;  margin-left: 25%;"  class="card-img-top" alt="">
+            <div class="card-body">
+              <h5 class="card-title">{{service.name }}</h5>
+              <p class="card-text">{{ service.description }}</p>
+              <p class="card-text">rice: ${{ service.price }}</p>
+              <button class="btn " style="background-color: #956bc5; width: 100%; color: white;">Book Now</button>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+
+
+
+<div class="container">
+  <div class="row" style="margin-top: 30px;">
+    <div class="col-md-6">
+      <h1 style="text-align: center; font-weight: bold; font-size: 30px; margin-top: 20px;">About Us</h1>
+      <P class="text-center ;" style="font-size: 20px; margin-top: 30px;">
+        We give startups a disproportionate advantage. <br>
+         At HarHubwe provide startups with the tools, <br>
+          resources, and network they need to gain <br>
+           a competitive advantage in their industries. <br>  
+            From tailored training programs to inspirational  <br>
+            talks by successful entrepreneurs, <br>
+             we empower young business enthusiasts to turn <br>
+              their ideas into successful ventures. <br> 
+              Attend one of our events to start <br>
+               growing your business today!</P>
+    </div>
+    <div class="col-md-6">
+      <img src="{% static 'images/Crowdfunding.jpg' %}" style="width: 98%; height: 100%; margin-right: 10px;" alt="">
+    </div>
+  </div>
+</div>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+  <br>
+  <hr>
+  <br>
+
+  <div class="row">
+    <div class="text-center">
+    <h4>Scan the QR code to view the menu on your phone:</h4>
+    <img src="{% url 'qrcode' %}" alt="QR Code">
+    
+    </div>
+    </div>
+    </div>
+    
+
+
+
+
+
+
+
+{% endblock %}
